@@ -14,7 +14,6 @@ import numpy as np
 import os
 import cv2
 import random
-import pickle
 
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
@@ -94,7 +93,7 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=
 
 
 
-model.fit(X, y, epochs=5, validation_split=0.1)
+model.fit(X, y, batch_size=32 , epochs=3, validation_split=0.1)
 
 
 
