@@ -3,17 +3,13 @@
 
 
 
-
-
-
-
-
 # ~~~~~~~~~~~~~~~ IMPORTS  ~~~~~~~~~~~~~~~
 
 import numpy as np
 import os
 import cv2
 import random
+import tensorflow as tf
 
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
@@ -61,6 +57,7 @@ for features, labels in data:
 X = np.array(X)
 y = np.array(y)
 
+X = tf.expand_dims(X, axis=-1)
 
 
 
@@ -73,11 +70,11 @@ X = X/255
 
 model = Sequential()
 
-model.add(Conv2D(64, (3, 3), activation='relu'))
+model.add(Conv2D(50, (3, 3), activation='relu'))
 
 model.add(MaxPooling2D((2,2)))
 
-model.add(Conv2D(64, (3, 3), activation='relu'))
+model.add(Conv2D(50, (3, 3), activation='relu'))
 
 model.add(MaxPooling2D((2,2)))
 
@@ -85,12 +82,11 @@ model.add(MaxPooling2D((2,2)))
 
 model.add(Flatten())
 
-model.add(Dense(128, input_shape=X.shape[1:], activation='relu'))
+model.add(Dense(8, input_shape=X.shape[1:], activation='relu'))
 
 model.add(Dense(2, activation='softmax'))
 
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
-
 
 
 model.fit(X, y, batch_size=32 , epochs=3, validation_split=0.1)
