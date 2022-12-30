@@ -38,13 +38,25 @@
 <p>activation </p>
 <p></p>
 
-<p>compile() </p>
-<p>optimizer </p>
-<p>loss </p>
+<p>O compile(), por sua vez, define a loss function, o optimizer e  os metrics</p>
+<p>O optimizer está ligado ao desempenho e a velocidade do modelo, procurando reduzir as perdas. 'Adam' (Adaptive Moment Estimation) atualiza a taxa de aprendizado para cada peso de rede, sendo recomendado como um algoritmo de otimização padrão.</p>
+<p>loss   'sparse_categorical_crossentropy'    </p>
+<p>metrics     ['accuracy']      </p>
 
 <p>fit() </p>
 <p>batch_size</p>
 <p>echos </p>
 <p>validation_split </p>
+
+<p>loss é o valor da função de custo para os dados de treinamento.</p>
+<p>accurary </p>
+<p>epoch é o número de vezes que o algorítmo roda por todo dataset de treino.</p>
+<p>val_loss é o valor da função de custo para os dados de validação cruzada.</p>
+<p>val_accuracy designa a precisão de um conjunto de validação.</p>
+
+
+
+
+
 
 <p>in progress ....</p>

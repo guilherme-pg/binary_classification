@@ -1,8 +1,6 @@
 
 
 
-
-
 # ~~~~~~~~~~~~~~~ IMPORTS  ~~~~~~~~~~~~~~~
 
 import numpy as np
@@ -61,6 +59,8 @@ X = tf.expand_dims(X, axis=-1)
 
 
 
+
+
 # ~~~~~~~~~~~~~~~ TRAIN / TEST  ~~~~~~~~~~~~~~~
 
 
@@ -70,11 +70,11 @@ X = X/255
 
 model = Sequential()
 
-model.add(Conv2D(50, (3, 3), activation='relu'))
+model.add(Conv2D(30, (3, 3), activation='relu'))
 
 model.add(MaxPooling2D((2,2)))
 
-model.add(Conv2D(50, (3, 3), activation='relu'))
+model.add(Conv2D(30, (3, 3), activation='relu'))
 
 model.add(MaxPooling2D((2,2)))
 
@@ -89,13 +89,7 @@ model.add(Dense(2, activation='softmax'))
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
 
-model.fit(X, y, batch_size=32 , epochs=3, validation_split=0.1)
-
-
-
-
-
-
+model.fit(X, y, batch_size=32 , epochs=10, validation_split=0.1)
 
 
 
