@@ -49,7 +49,7 @@
 <p>validation_split </p>
 
 <p>loss é o valor da função de custo para os dados de treinamento.</p>
-<p>accurary </p>
+<p>accurary é a porcentagem de predições corretas.</p>
 <p>epoch é o número de vezes que o algorítmo roda por todo dataset de treino.</p>
 <p>val_loss é o valor da função de custo para os dados de validação cruzada.</p>
 <p>val_accuracy designa a precisão de um conjunto de validação.</p>
