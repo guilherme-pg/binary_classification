@@ -1,10 +1,9 @@
 
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import HTMLResponse
-from Service.ClassificationService import classify_image # to do
+from Service.ClassificationService import classify_image
 
 app = FastAPI()
-
 
 
 # MAIN PAGE - description
@@ -16,18 +15,8 @@ async def read_items():
     return HTMLResponse(content=html_content, status_code=200)
 
 
-
 # UPLOAD IMAGE
 @app.post("/upload_image")
 async def upload_image(file: UploadFile):
-    body = classify_image(file)
-    return {"filename": file.filename}
-
-
-
-
-# CLASSIFICATION RESULTS - SCORES AND AVALIATION
-@app.get("/return_avaliation", methods=["GET"])
-def return_avaliation():
-    body = avaliation_return() # get the classification results to return
-    return body
+    scores = classify_image(file)
+    return scores

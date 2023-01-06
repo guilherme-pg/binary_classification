@@ -1,6 +1,5 @@
 
 
-
 # ~~~~~~~~~~~~~~~ IMPORTS  ~~~~~~~~~~~~~~~
 
 import numpy as np
@@ -12,22 +11,16 @@ import tensorflow as tf
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 
-
-
+from Service.general_settings import IMG_SIZE
 
 
 # ~~~~~~~~~~~~~~~ GENERAL VARIABLES  ~~~~~~~~~~~~~~~
 
 dir_path = "C:/Users/guima/Desktop/data_science/Projetos/which_maracatu"
 
-IMG_SIZE = 100
-
 categories = ["maracatu_nation", "maracatu_rural"]
 
 data = []
-
-
-
 
 
 # ~~~~~~~~~~~~~~~ DATA PROCESSING  ~~~~~~~~~~~~~~~
@@ -58,26 +51,21 @@ y = np.array(y)
 X = tf.expand_dims(X, axis=-1)
 
 
-
-
-
 # ~~~~~~~~~~~~~~~ TRAIN / TEST  ~~~~~~~~~~~~~~~
 
 
 X = X/255
 
 
-
 model = Sequential()
 
 model.add(Conv2D(30, (3, 3), activation='relu'))
 
-model.add(MaxPooling2D((2,2)))
+model.add(MaxPooling2D((2, 2)))
 
 model.add(Conv2D(30, (3, 3), activation='relu'))
 
-model.add(MaxPooling2D((2,2)))
-
+model.add(MaxPooling2D((2, 2)))
 
 
 model.add(Flatten())
@@ -89,5 +77,6 @@ model.add(Dense(2, activation='softmax'))
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
 
-model.fit(X, y, batch_size=32, epochs=10, validation_split=0.1)
+model.fit(X, y, batch_size=32, epochs=25, validation_split=0.1)
 
+# REQUIRE: IMPROVE THE MODEL METRICS SCORES
