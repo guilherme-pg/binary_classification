@@ -3,7 +3,6 @@ from which_maracatu import model
 from general_settings import IMG_SIZE
 
 
-# import model
 # predict image
 def classify_image(img):
     # check if file is corrupted
