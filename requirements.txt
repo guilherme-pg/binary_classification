@@ -1,6 +1,5 @@
-fastapi==0.88.0
-keras~=2.10.0
+fastapi==0.89.1
+keras==2.10.0
 matplotlib==3.6.0
-numpy~=1.23.5
-opencv==4.6.0
-tensorflow~=2.10.0
+numpy==1.23.5
+tensorflow==2.10.0
