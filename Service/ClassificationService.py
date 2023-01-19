@@ -1,18 +1,22 @@
-import cv2
+
+import os
+from keras.utils import load_img, img_to_array
 from which_maracatu import model
 from general_settings import IMG_SIZE
 
 
 # predict image
 def classify_image(img):
+    print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
     # check if file is corrupted
     # check if file is an image
 
-    img_array = cv2.imread(img, cv2.IMREAD_GRAYSCALE)
-    img_array_resized = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE))
+    # image = load_img(os.path.join(path, img), color_mode="grayscale")
+    # img_array = img_to_array(image)
 
-    predictions = model.predict(img_array_resized)
-    scores = float(predictions[0])
+    # predictions = model.predict(img_array_resized)
+    # scores = float(predictions[0])
         # REQUIRE: return multiple scores with analythics
-    return scores
+    return print("bbbbb  scores bbbbbbbbbbbbbbbbbbbbb")
+    # return scores
     # RETURN : SCORE RESULTS

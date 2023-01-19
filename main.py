@@ -1,5 +1,5 @@
 
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, UploadFile
 from fastapi.responses import HTMLResponse
 from Service.ClassificationService import classify_image
 
