@@ -1,3 +1,5 @@
 
 # CONSTANTS
 IMG_SIZE = 100
+
+
